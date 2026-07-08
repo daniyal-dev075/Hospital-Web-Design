@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment | Modern Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .page-header {
+      padding-top: 10rem;
+      padding-bottom: 4rem;
+      background: var(--color-primary-light);
+      text-align: center;
+    }
+    
+    [data-theme="dark"] .page-header {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .form-container {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-border);
+    }
+    
+    @media (min-width: 768px) {
+      .form-container {
+        padding: 3rem;
+      }
+    }
+
+    .progress-bar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .progress-bar::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--color-border);
+      z-index: 1;
+      transform: translateY(-50%);
+    }
+
+    .step-indicator {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-surface);
+      border: 2px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      position: relative;
+      z-index: 2;
+      color: var(--color-text-secondary);
+      transition: all var(--transition-fast);
+    }
+
+    .step-indicator.active {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      box-shadow: 0 0 0 4px var(--color-primary-light);
+    }
+
+    .step-indicator.completed {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: white;
+    }
+
+    .step-content {
+      display: none;
+      animation: fadeIn var(--transition-normal);
+    }
+
+    .step-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .select-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .select-card {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .select-card:hover {
+      border-color: var(--color-primary);
+      background: var(--color-primary-light);
+    }
+
+    .select-card.selected {
+      border-color: var(--color-primary);
+      background: var(--color-primary);
+      color: white;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    [data-theme="dark"] .select-card:hover {
+      background: rgba(63, 216, 184, 0.1);
+    }
+    
+    [data-theme="dark"] .select-card.selected {
+      background: var(--color-primary);
+      color: var(--color-bg);
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+    
+    .sidebar-info {
+      background: var(--color-primary-light);
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+    }
+    
+    [data-theme="dark"] .sidebar-info {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+        </svg>
+        ModernCare
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="departments.html" class="nav-link">Departments</a>
+        <a href="doctors.html" class="nav-link">Doctors</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle btn-outline btn" style="border:none; padding: 0.5rem" aria-label="Toggle dark mode">🌓</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="page-header">
+      <div class="container reveal">
+        <h1>Book an Appointment</h1>
+        <p>Schedule your visit with our specialists in just a few simple steps.</p>
+      </div>
+    </header>
+
+    <section class="section container grid" style="grid-template-columns: 1fr; align-items: start;">
+      <style>
+        @media (min-width: 1024px) {
+          .appointment-layout { grid-template-columns: 2fr 1fr; }
+        }
+      </style>
+      
+      <div class="grid appointment-layout">
+        <div class="form-container reveal" data-delay="100">
+          <div class="progress-bar">
+            <div class="step-indicator active" id="ind-1">1</div>
+            <div class="step-indicator" id="ind-2">2</div>
+            <div class="step-indicator" id="ind-3">3</div>
+            <div class="step-indicator" id="ind-4">4</div>
+          </div>
+
+          <form id="appointmentForm" onsubmit="event.preventDefault(); nextStep();">
+            
+            <!-- Step 1: Department -->
+            <div class="step-content active" id="step-1">
+              <h2 style="margin-bottom: 1.5rem;">Select Department</h2>
+              <div class="select-grid">
+                <div class="select-card" onclick="selectCard(this, 'dept')">Cardiology</div>
+                <div class="select-card" onclick="selectCard(this, 'dept')">Neurology</div>
+                <div class="select-card" onclick="selectCard(this, 'dept')">Orthopedics</div>
+                <div class="select-card" onclick="selectCard(this, 'dept')">Pediatrics</div>
+                <div class="select-card" onclick="selectCard(this, 'dept')">General Physician</div>
+                <div class="select-card" onclick="selectCard(this, 'dept')">Dentistry</div>
+              </div>
+              <div class="btn-group" style="justify-content: flex-end;">
+                <button type="button" class="btn btn-primary" onclick="nextStep(1)">Continue &rarr;</button>
+              </div>
+            </div>
+
+            <!-- Step 2: Doctor -->
+            <div class="step-content" id="step-2">
+              <h2 style="margin-bottom: 1.5rem;">Select Doctor</h2>
+              <div class="select-grid" style="grid-template-columns: 1fr;">
+                <div class="select-card" style="display: flex; align-items: center; gap: 1rem; text-align: left;" onclick="selectCard(this, 'doc')">
+                  <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=100" alt="Dr. Jenkins" style="width:60px; height:60px; border-radius:50%; object-fit:cover;">
+                  <div>
+                    <div class="fw-600" style="font-size: 1.125rem;">Dr. Sarah Jenkins</div>
+                    <div style="font-size: 0.875rem;">Cardiology Specialist</div>
+                  </div>
+                </div>
+                <div class="select-card" style="display: flex; align-items: center; gap: 1rem; text-align: left;" onclick="selectCard(this, 'doc')">
+                  <div style="width:60px; height:60px; border-radius:50%; background:var(--color-primary-light); display:flex; align-items:center; justify-content:center; font-size:1.5rem;">👩‍⚕️</div>
+                  <div>
+                    <div class="fw-600" style="font-size: 1.125rem;">Any Available Doctor</div>
+                    <div style="font-size: 0.875rem;">Earliest slot</div>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline" onclick="prevStep(2)">&larr; Back</button>
+                <button type="button" class="btn btn-primary" onclick="nextStep(2)">Continue &rarr;</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Date & Time -->
+            <div class="step-content" id="step-3">
+              <h2 style="margin-bottom: 1.5rem;">Date & Time</h2>
+              <div class="form-group floating-label">
+                <input type="date" id="date" class="form-control" required>
+                <label for="date">Preferred Date</label>
+              </div>
+              <div style="margin-bottom: 1rem;" class="fw-600">Available Slots</div>
+              <div class="select-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="select-card" onclick="selectCard(this, 'time')">09:00 AM</div>
+                <div class="select-card" onclick="selectCard(this, 'time')">11:30 AM</div>
+                <div class="select-card" onclick="selectCard(this, 'time')">02:00 PM</div>
+                <div class="select-card" onclick="selectCard(this, 'time')">04:15 PM</div>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline" onclick="prevStep(3)">&larr; Back</button>
+                <button type="button" class="btn btn-primary" onclick="nextStep(3)">Continue &rarr;</button>
+              </div>
+            </div>
+
+            <!-- Step 4: Patient Info -->
+            <div class="step-content" id="step-4">
+              <h2 style="margin-bottom: 1.5rem;">Patient Details</h2>
+              <div class="grid grid-cols-2" style="gap: 1.5rem;">
+                <div class="form-group floating-label" style="margin:0;">
+                  <input type="text" id="fname" class="form-control" placeholder="First Name" required>
+                  <label for="fname">First Name</label>
+                </div>
+                <div class="form-group floating-label" style="margin:0;">
+                  <input type="text" id="lname" class="form-control" placeholder="Last Name" required>
+                  <label for="lname">Last Name</label>
+                </div>
+              </div>
+              <div class="form-group floating-label" style="margin-top: 1.5rem;">
+                <input type="email" id="email" class="form-control" placeholder="Email Address" required>
+                <label for="email">Email Address</label>
+              </div>
+              <div class="form-group floating-label">
+                <input type="tel" id="phone" class="form-control" placeholder="Phone Number" required>
+                <label for="phone">Phone Number</label>
+              </div>
+              <div class="form-group floating-label">
+                <textarea id="reason" class="form-control" placeholder="Reason for visit (optional)" style="height: 100px; padding-top: 1.5rem;"></textarea>
+                <label for="reason">Reason for visit (optional)</label>
+              </div>
+              
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline" onclick="prevStep(4)">&larr; Back</button>
+                <button type="button" class="btn btn-accent" onclick="showConfirmation()">Confirm Booking</button>
+              </div>
+            </div>
+
+            <!-- Confirmation -->
+            <div class="step-content text-center" id="step-5">
+              <div style="font-size: 4rem; color: var(--color-success); margin-bottom: 1rem;">✓</div>
+              <h2>Booking Confirmed!</h2>
+              <p>Your appointment has been successfully scheduled. We have sent a confirmation email with the details.</p>
+              <div style="margin-top: 2rem;">
+                <a href="index.html" class="btn btn-outline">Return to Home</a>
+              </div>
+            </div>
+
+          </form>
+        </div>
+        
+        <div class="sidebar-info reveal" data-delay="200">
+          <h3 style="margin-bottom: 1rem;">What to Bring</h3>
+          <ul style="list-style-position: inside; margin-bottom: 2rem; color: var(--color-text-secondary);">
+            <li>Valid photo ID</li>
+            <li>Insurance card</li>
+            <li>List of current medications</li>
+            <li>Previous medical records (if any)</li>
+          </ul>
+          
+          <h3 style="margin-bottom: 1rem;">Insurance Information</h3>
+          <p style="font-size: 0.875rem;">We accept most major insurance plans. Please verify your coverage with your provider before your visit.</p>
+          
+          <hr style="border:none; border-top: 1px solid var(--color-border); margin: 2rem 0;">
+          
+          <h3>Need Help?</h3>
+          <p style="font-size: 0.875rem;">If you are experiencing a medical emergency, do not use this form.</p>
+          <p class="text-danger fw-600" style="color: var(--color-danger);">Call 911 immediately.</p>
+          <p style="font-size: 0.875rem; margin-top: 1rem;">For booking assistance: <br><strong class="text-primary">1-800-123-4567</strong></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+  <script>
+    function selectCard(element, group) {
+      // Remove selected class from others in the group
+      const cards = element.parentElement.querySelectorAll('.select-card');
+      cards.forEach(c => c.classList.remove('selected'));
+      // Add to clicked
+      element.classList.add('selected');
+    }
+
+    function nextStep(current) {
+      document.getElementById(`step-${current}`).classList.remove('active');
+      document.getElementById(`step-${current + 1}`).classList.add('active');
+      
+      const ind = document.getElementById(`ind-${current}`);
+      if(ind) {
+        ind.classList.remove('active');
+        ind.classList.add('completed');
+        ind.innerHTML = '✓';
+      }
+      
+      const nextInd = document.getElementById(`ind-${current + 1}`);
+      if(nextInd) nextInd.classList.add('active');
+    }
+
+    function prevStep(current) {
+      document.getElementById(`step-${current}`).classList.remove('active');
+      document.getElementById(`step-${current - 1}`).classList.add('active');
+      
+      const ind = document.getElementById(`ind-${current}`);
+      if(ind) ind.classList.remove('active');
+      
+      const prevInd = document.getElementById(`ind-${current - 1}`);
+      if(prevInd) {
+        prevInd.classList.remove('completed');
+        prevInd.classList.add('active');
+        prevInd.innerHTML = current - 1;
+      }
+    }
+
+    function showConfirmation() {
+      // Basic validation mock
+      const inputs = document.querySelectorAll('#step-4 input[required]');
+      let valid = true;
+      inputs.forEach(input => {
+        if(!input.value) {
+          valid = false;
+          input.style.borderColor = 'var(--color-danger)';
+        } else {
+          input.style.borderColor = '';
+        }
+      });
+      
+      if(valid) {
+        document.getElementById('step-4').classList.remove('active');
+        document.getElementById('step-5').classList.add('active');
+        document.querySelector('.progress-bar').style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>

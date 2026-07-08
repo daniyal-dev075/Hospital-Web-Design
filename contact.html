@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Modern Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .contact-grid {
+      display: grid;
+      gap: 4rem;
+    }
+    
+    @media (min-width: 1024px) {
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar scrolled">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">ModernCare</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="contact.html" class="nav-link fw-600 text-primary">Contact Us</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle btn-outline btn" style="border:none; padding: 0.5rem">🌓</button>
+      </div>
+    </div>
+  </nav>
+
+  <main style="padding-top: 8rem; padding-bottom: 4rem;">
+    <div class="container reveal">
+      <h1 style="margin-bottom: 3rem; text-align: center;">Get in Touch</h1>
+      
+      <div class="contact-grid">
+        <div>
+          <div class="card" style="margin-bottom: 2rem;">
+            <h3>General Inquiries</h3>
+            <p>123 Health Avenue, Medical District<br>New York, NY 10001</p>
+            <p class="fw-600 text-primary">Phone: 1-800-123-4567</p>
+            <p>Email: info@moderncare.com</p>
+          </div>
+          
+          <div class="card" style="border-color: var(--color-danger);">
+            <h3 class="text-danger" style="color: var(--color-danger);">Emergency Services</h3>
+            <p>Open 24/7. Level 1 Trauma Center.</p>
+            <p class="fw-600 text-danger" style="font-size: 1.5rem; color: var(--color-danger);">1-800-911-CARE</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3 style="margin-bottom: 1.5rem;">Send a Message</h3>
+          <form>
+            <div class="form-group floating-label">
+              <input type="text" id="name" class="form-control" placeholder="Full Name" required>
+              <label for="name">Full Name</label>
+            </div>
+            <div class="form-group floating-label">
+              <input type="email" id="email" class="form-control" placeholder="Email" required>
+              <label for="email">Email Address</label>
+            </div>
+            <div class="form-group floating-label">
+              <textarea id="msg" class="form-control" placeholder="Message" style="height: 150px; padding-top: 1.5rem;" required></textarea>
+              <label for="msg">How can we help?</label>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <script src="js/script.js"></script>
+</body>
+</html>

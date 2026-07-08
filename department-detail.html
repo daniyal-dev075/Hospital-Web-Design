@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardiology Department | Modern Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .dept-hero {
+      padding-top: 8rem;
+      padding-bottom: 4rem;
+      position: relative;
+    }
+    
+    .dept-hero-bg {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url('https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=1600');
+      background-size: cover;
+      background-position: center;
+      z-index: -2;
+    }
+    
+    .dept-hero-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to right, var(--color-surface) 0%, rgba(255,255,255,0.8) 50%, transparent 100%);
+      z-index: -1;
+    }
+    
+    [data-theme="dark"] .dept-hero-overlay {
+      background: linear-gradient(to right, var(--color-surface) 0%, rgba(19, 37, 35, 0.9) 60%, transparent 100%);
+    }
+
+    .service-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .service-list li {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .service-list li::before {
+      content: '✓';
+      color: var(--color-success);
+      font-weight: bold;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+        </svg>
+        ModernCare
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="departments.html" class="nav-link fw-600 text-primary">Departments</a>
+        <a href="doctors.html" class="nav-link">Doctors</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle btn-outline btn" style="border:none; padding: 0.5rem" aria-label="Toggle dark mode">🌓</button>
+        <a href="appointment.html" class="btn btn-primary">Book Appointment</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="dept-hero">
+      <div class="dept-hero-bg"></div>
+      <div class="dept-hero-overlay"></div>
+      <div class="container reveal">
+        <div style="max-width: 600px; padding-block: 4rem;">
+          <a href="departments.html" style="font-size: 0.875rem; margin-bottom: 1rem; display: inline-block;">&larr; Back to Departments</a>
+          <h1 style="margin-bottom: 1rem;">Cardiology Center</h1>
+          <p style="font-size: 1.125rem; margin-bottom: 2rem;">World-class cardiovascular care utilizing the most advanced technology and minimally invasive techniques to keep your heart healthy.</p>
+          <div style="display: flex; gap: 1rem;">
+            <a href="appointment.html" class="btn btn-primary">Book Consultation</a>
+            <a href="#team" class="btn btn-outline">Meet the Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container grid" style="grid-template-columns: 1fr; gap: 4rem;">
+      <style>
+        @media (min-width: 1024px) {
+          .content-layout { grid-template-columns: 2fr 1fr; }
+        }
+      </style>
+      
+      <div class="grid content-layout">
+        <div>
+          <h2 class="reveal">Overview</h2>
+          <p class="reveal" data-delay="100">The Modern Care Hospital Cardiology Center is a premier facility dedicated to the prevention, diagnosis, and treatment of heart disease. Our multidisciplinary team of board-certified cardiologists, cardiovascular surgeons, and specialized nurses work collaboratively to provide personalized care plans for every patient.</p>
+          <p class="reveal" data-delay="150">We are equipped with state-of-the-art Catheterization Labs and advanced non-invasive imaging technologies, ensuring that our patients receive the most accurate diagnoses and effective treatments available today.</p>
+
+          <h3 class="reveal" style="margin-top: 3rem; margin-bottom: 1.5rem;">Conditions We Treat</h3>
+          <div class="grid grid-cols-2 reveal" data-delay="100">
+            <ul class="service-list">
+              <li>Coronary Artery Disease</li>
+              <li>Heart Failure</li>
+              <li>Arrhythmias (Atrial Fibrillation)</li>
+              <li>Valvular Heart Disease</li>
+            </ul>
+            <ul class="service-list">
+              <li>Hypertension (High Blood Pressure)</li>
+              <li>Peripheral Artery Disease</li>
+              <li>Congenital Heart Defects</li>
+              <li>Aortic Aneurysms</li>
+            </ul>
+          </div>
+          
+          <h3 class="reveal" style="margin-top: 3rem; margin-bottom: 1.5rem;">Advanced Treatments & Procedures</h3>
+          <p class="reveal">We offer a full spectrum of cardiovascular procedures, prioritizing minimally invasive options whenever possible to reduce recovery time.</p>
+          <ul class="service-list reveal">
+            <li><strong>Angioplasty and Stenting:</strong> Minimally invasive procedures to open blocked arteries.</li>
+            <li><strong>Electrophysiology Studies:</strong> Diagnosis and treatment of abnormal heart rhythms, including pacemakers and ablation.</li>
+            <li><strong>TAVR (Transcatheter Aortic Valve Replacement):</strong> Minimally invasive valve replacement for high-risk patients.</li>
+            <li><strong>Coronary Artery Bypass Grafting (CABG):</strong> Advanced surgical interventions for severe blockages.</li>
+          </ul>
+        </div>
+        
+        <aside class="reveal" data-delay="200">
+          <div class="card" style="background: var(--color-primary-light); margin-bottom: 2rem;">
+            <h3 style="margin-bottom: 1rem; color: var(--color-primary-dark);">Quick Facts</h3>
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: 1rem;"><strong>Location:</strong> East Wing, 3rd Floor</li>
+              <li style="margin-bottom: 1rem;"><strong>Hours:</strong> Mon-Fri, 8:00 AM - 6:00 PM</li>
+              <li style="margin-bottom: 1rem;"><strong>Emergency:</strong> 24/7 Cardiac Cath Lab</li>
+              <li><strong>Direct Line:</strong> 1-800-HEART-MC</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3 style="margin-bottom: 1rem;">Patient Resources</h3>
+            <a href="#" style="display: block; margin-bottom: 0.5rem;">&rarr; Preparing for your EKG</a>
+            <a href="#" style="display: block; margin-bottom: 0.5rem;">&rarr; Heart-Healthy Diet Guide</a>
+            <a href="#" style="display: block;">&rarr; Cardiac Rehab Program</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section" style="background: var(--color-surface); border-top: 1px solid var(--color-border);">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 4rem;">
+          <span class="eyebrow">Expert Care</span>
+          <h2>Our Cardiology Specialists</h2>
+        </div>
+        
+        <div class="team-grid">
+          <div class="card card-hover reveal" data-delay="100">
+            <div class="card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=400" alt="Dr. Sarah Jenkins">
+            </div>
+            <h3>Dr. Sarah Jenkins</h3>
+            <p class="text-primary">Interventional Cardiologist</p>
+            <a href="#" class="btn btn-outline" style="width: 100%; margin-top: 1rem;">View Profile</a>
+          </div>
+          
+          <div class="card card-hover reveal" data-delay="200">
+            <div class="card-img-wrapper" style="background: var(--color-border); display: flex; align-items: center; justify-content: center; height: 250px;">
+              <span style="font-size: 4rem;">👨‍⚕️</span>
+            </div>
+            <h3>Dr. Robert Chen</h3>
+            <p class="text-primary">Electrophysiologist</p>
+            <a href="#" class="btn btn-outline" style="width: 100%; margin-top: 1rem;">View Profile</a>
+          </div>
+          
+          <div class="card card-hover reveal" data-delay="300">
+            <div class="card-img-wrapper" style="background: var(--color-border); display: flex; align-items: center; justify-content: center; height: 250px;">
+              <span style="font-size: 4rem;">👩‍⚕️</span>
+            </div>
+            <h3>Dr. Amina Patel</h3>
+            <p class="text-primary">Cardiothoracic Surgeon</p>
+            <a href="#" class="btn btn-outline" style="width: 100%; margin-top: 1rem;">View Profile</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Modern Care Hospital. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Services | Modern Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    body {
+      background-color: #FAFBFA;
+    }
+    
+    [data-theme="dark"] body {
+      background-color: #1a0f0f;
+    }
+    
+    .emergency-hero {
+      background-color: var(--color-danger);
+      color: white;
+      padding: 6rem 0;
+      text-align: center;
+    }
+    
+    .call-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      background: white;
+      color: var(--color-danger);
+      font-size: 2rem;
+      font-weight: 700;
+      padding: 1.5rem 3rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      margin-top: 2rem;
+      transition: transform 0.2s;
+    }
+    
+    .call-btn:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar scrolled">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">ModernCare</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <main style="padding-top: 60px;">
+    <section class="emergency-hero reveal">
+      <div class="container">
+        <h1 style="color: white; margin-bottom: 1rem;">Level 1 Trauma Center</h1>
+        <p style="font-size: 1.5rem; max-width: 800px; margin: 0 auto;">Open 24/7. Immediate care for life-threatening conditions.</p>
+        <a href="tel:911" class="call-btn">📞 CALL 911</a>
+      </div>
+    </section>
+
+    <section class="section container reveal" data-delay="200">
+      <div class="grid grid-cols-2">
+        <div class="card" style="border-left: 4px solid var(--color-danger);">
+          <h2 style="margin-bottom: 1rem;">When to visit the ER</h2>
+          <ul style="list-style-position: inside; line-height: 1.8;">
+            <li>Chest pain or difficulty breathing</li>
+            <li>Severe bleeding or head trauma</li>
+            <li>Sudden weakness or loss of vision</li>
+            <li>Severe burns or deep wounds</li>
+            <li>Loss of consciousness</li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h2 style="margin-bottom: 1rem;">Location & Directions</h2>
+          <p class="fw-600">Main Campus - ER Entrance</p>
+          <p>123 Health Avenue, Medical District<br>Access via 5th Street (Follow red signs)</p>
+          <button class="btn btn-outline" style="margin-top: 1.5rem; width: 100%;">Open in Maps</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <script src="js/script.js"></script>
+</body>
+</html>

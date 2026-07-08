@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions | Modern Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .faq-item {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+    
+    .faq-question {
+      padding: 1.5rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .faq-question:hover {
+      background: var(--color-primary-light);
+    }
+    
+    [data-theme="dark"] .faq-question:hover {
+      background: rgba(63, 216, 184, 0.1);
+    }
+    
+    .faq-answer {
+      padding: 0 1.5rem 1.5rem 1.5rem;
+      display: none;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar scrolled">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">ModernCare</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle btn-outline btn" style="border:none; padding: 0.5rem">🌓</button>
+      </div>
+    </div>
+  </nav>
+
+  <main style="padding-top: 8rem; padding-bottom: 4rem;">
+    <div class="container reveal" style="max-width: 800px;">
+      <h1 style="text-align: center; margin-bottom: 3rem;">Frequently Asked Questions</h1>
+      
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block'">
+            What are your visiting hours?
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            General visiting hours are from 9:00 AM to 8:00 PM daily. Intensive Care Units (ICU) have restricted hours from 11:00 AM to 1:00 PM and 5:00 PM to 7:00 PM. Only two visitors are allowed per patient at a time.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block'">
+            Do I need a referral to see a specialist?
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            It depends on your insurance provider. Many HMO plans require a referral from your primary care physician, while PPO plans usually do not. Please check with your insurance provider or call our billing department for clarification.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block'">
+            How do I get a copy of my medical records?
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            You can access most of your test results and visit summaries instantly through our Patient Portal. For complete official records, please submit a Medical Records Request form online or visit the records department on the ground floor.
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <script src="js/script.js"></script>
+</body>
+</html>

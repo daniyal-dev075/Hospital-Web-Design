@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Departments & Specialties | Modern Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .page-header {
+      padding-top: 10rem;
+      padding-bottom: 4rem;
+      background: var(--color-primary-light);
+      text-align: center;
+    }
+    
+    [data-theme="dark"] .page-header {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    .dept-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .dept-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: all var(--transition-normal);
+    }
+    
+    [data-theme="dark"] .dept-icon {
+      background: rgba(63, 216, 184, 0.1);
+    }
+    
+    .card-hover:hover .dept-icon {
+      background: var(--color-primary);
+      color: white;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+        </svg>
+        ModernCare
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="departments.html" class="nav-link fw-600 text-primary">Departments</a>
+        <a href="doctors.html" class="nav-link">Doctors</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle btn-outline btn" style="border:none; padding: 0.5rem" aria-label="Toggle dark mode">🌓</button>
+        <a href="appointment.html" class="btn btn-primary d-none d-lg-inline-flex">Book Appointment</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="page-header">
+      <div class="container reveal">
+        <h1>Centers of Excellence</h1>
+        <p>Comprehensive, specialized care across a wide range of medical disciplines.</p>
+      </div>
+    </header>
+
+    <section class="section container">
+      <div class="grid grid-cols-3">
+        <!-- Cardiology -->
+        <a href="department-detail.html" class="card card-hover dept-card reveal" data-delay="100">
+          <div class="dept-icon">❤️</div>
+          <h3>Cardiology</h3>
+          <p>State-of-the-art heart care, from preventive screenings to complex cardiovascular surgeries.</p>
+          <span class="text-primary fw-600" style="margin-top: auto; padding-top: 1rem;">Explore Department &rarr;</span>
+        </a>
+        
+        <!-- Neurology -->
+        <a href="department-detail.html" class="card card-hover dept-card reveal" data-delay="200">
+          <div class="dept-icon">🧠</div>
+          <h3>Neurology</h3>
+          <p>Expert diagnosis and treatment for disorders of the brain, spine, and nervous system.</p>
+          <span class="text-primary fw-600" style="margin-top: auto; padding-top: 1rem;">Explore Department &rarr;</span>
+        </a>
+
+        <!-- Oncology -->
+        <a href="department-detail.html" class="card card-hover dept-card reveal" data-delay="300">
+          <div class="dept-icon">🎗️</div>
+          <h3>Oncology</h3>
+          <p>Comprehensive, personalized cancer care including chemotherapy, radiation, and surgical oncology.</p>
+          <span class="text-primary fw-600" style="margin-top: auto; padding-top: 1rem;">Explore Department &rarr;</span>
+        </a>
+
+        <!-- Orthopedics -->
+        <a href="department-detail.html" class="card card-hover dept-card reveal" data-delay="100">
+          <div class="dept-icon">🦴</div>
+          <h3>Orthopedics</h3>
+          <p>Specialized care for bones, joints, ligaments, tendons, and muscles, including joint replacement.</p>
+          <span class="text-primary fw-600" style="margin-top: auto; padding-top: 1rem;">Explore Department &rarr;</span>
+        </a>
+
+        <!-- Pediatrics -->
+        <a href="department-detail.html" class="card card-hover dept-card reveal" data-delay="200">
+          <div class="dept-icon">🧸</div>
+          <h3>Pediatrics</h3>
+          <p>Compassionate care for infants, children, and adolescents in a child-friendly environment.</p>
+          <span class="text-primary fw-600" style="margin-top: auto; padding-top: 1rem;">Explore Department &rarr;</span>
+        </a>
+
+        <!-- Maternity -->
+        <a href="department-detail.html" class="card card-hover dept-card reveal" data-delay="300">
+          <div class="dept-icon">👶</div>
+          <h3>Maternity & Obstetrics</h3>
+          <p>Comprehensive care for mothers and newborns, from family planning to childbirth and beyond.</p>
+          <span class="text-primary fw-600" style="margin-top: auto; padding-top: 1rem;">Explore Department &rarr;</span>
+        </a>
+        
+        <!-- General Surgery -->
+        <a href="department-detail.html" class="card card-hover dept-card reveal" data-delay="100">
+          <div class="dept-icon">⚕️</div>
+          <h3>General Surgery</h3>
+          <p>Advanced surgical procedures, including minimally invasive and robotic-assisted surgeries.</p>
+          <span class="text-primary fw-600" style="margin-top: auto; padding-top: 1rem;">Explore Department &rarr;</span>
+        </a>
+
+        <!-- Emergency -->
+        <a href="emergency.html" class="card card-hover dept-card reveal" data-delay="200" style="border: 2px solid var(--color-danger);">
+          <div class="dept-icon" style="background: rgba(225, 72, 72, 0.1); color: var(--color-danger);">🚑</div>
+          <h3>Emergency Medicine</h3>
+          <p>24/7 Level 1 Trauma Center providing immediate, life-saving care for critical conditions.</p>
+          <span class="text-danger fw-600" style="margin-top: auto; padding-top: 1rem;">View Emergency Services &rarr;</span>
+        </a>
+
+        <!-- Dermatology -->
+        <a href="department-detail.html" class="card card-hover dept-card reveal" data-delay="300">
+          <div class="dept-icon">🔬</div>
+          <h3>Dermatology</h3>
+          <p>Expert care for skin, hair, and nail conditions, including skin cancer screenings.</p>
+          <span class="text-primary fw-600" style="margin-top: auto; padding-top: 1rem;">Explore Department &rarr;</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Modern Care Hospital. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

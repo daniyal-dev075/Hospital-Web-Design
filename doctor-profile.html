@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Sarah Jenkins | Modern Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .profile-header {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      padding-top: 8rem;
+      padding-bottom: 3rem;
+    }
+
+    .profile-grid {
+      display: grid;
+      gap: 3rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      .profile-grid {
+        grid-template-columns: 300px 1fr;
+      }
+    }
+
+    .profile-img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      aspect-ratio: 3/4;
+      object-fit: cover;
+    }
+
+    .stat-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--color-primary-light);
+      color: var(--color-primary-dark);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+
+    [data-theme="dark"] .stat-badge {
+      background: rgba(63, 216, 184, 0.15);
+      color: var(--color-primary);
+    }
+
+    .content-section {
+      margin-bottom: 3rem;
+    }
+
+    .content-section h3 {
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .list-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .list-item-year {
+      font-weight: 600;
+      color: var(--color-primary);
+      width: 60px;
+    }
+    
+    .review-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+    }
+    
+    .stars {
+      color: #FFB400;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+    
+    .calendar-widget {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      position: sticky;
+      top: 100px;
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+        </svg>
+        ModernCare
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="departments.html" class="nav-link">Departments</a>
+        <a href="doctors.html" class="nav-link fw-600 text-primary">Doctors</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle btn-outline btn" style="border:none; padding: 0.5rem">🌓</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="profile-header">
+      <div class="container profile-grid reveal">
+        <div>
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600" alt="Dr. Sarah Jenkins" class="profile-img">
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+          <h1 style="margin-bottom: 0.5rem;">Dr. Sarah Jenkins, MD, FACC</h1>
+          <p class="text-primary fw-600" style="font-size: 1.25rem; margin-bottom: 1.5rem;">Head of Cardiology</p>
+          
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+            <div class="stat-badge">⭐ 4.9/5 (124 Reviews)</div>
+            <div class="stat-badge">🕒 15+ Years Experience</div>
+            <div class="stat-badge">🗣️ English, Spanish</div>
+          </div>
+          
+          <p style="font-size: 1.125rem; max-width: 600px; margin-bottom: 2rem;">"I believe in treating the whole patient, not just the heart. My goal is to empower my patients with the knowledge and care they need to live long, healthy lives."</p>
+          
+          <div style="display: flex; gap: 1rem;">
+            <a href="appointment.html" class="btn btn-primary">Book Appointment</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container profile-grid">
+      <div>
+        <div class="calendar-widget reveal" data-delay="100">
+          <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">Availability</h3>
+          <p style="font-size: 0.875rem; margin-bottom: 1rem;">Select a day to view open slots.</p>
+          
+          <!-- Mock Calendar -->
+          <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.25rem; text-align: center; margin-bottom: 1rem; font-size: 0.875rem;">
+            <div class="fw-600">S</div><div class="fw-600">M</div><div class="fw-600">T</div><div class="fw-600">W</div><div class="fw-600">T</div><div class="fw-600">F</div><div class="fw-600">S</div>
+            <div style="color: var(--color-border);">28</div>
+            <div style="color: var(--color-border);">29</div>
+            <div style="color: var(--color-border);">30</div>
+            <div style="background: var(--color-primary); color: white; border-radius: 4px; padding: 0.25rem;">1</div>
+            <div style="background: var(--color-primary-light); color: var(--color-primary); border-radius: 4px; padding: 0.25rem;">2</div>
+            <div style="background: var(--color-primary-light); color: var(--color-primary); border-radius: 4px; padding: 0.25rem;">3</div>
+            <div>4</div>
+          </div>
+          
+          <a href="appointment.html" class="btn btn-primary" style="width: 100%; justify-content: center;">See All Slots</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="content-section reveal" data-delay="100">
+          <h3>Biography</h3>
+          <p>Dr. Sarah Jenkins is an internationally recognized interventional cardiologist with over 15 years of experience in diagnosing and treating complex cardiovascular diseases. She completed her fellowship at Johns Hopkins and has since pioneered several minimally invasive techniques for valve replacement.</p>
+          <p>She is deeply passionate about preventive cardiology and runs a specialized clinic focusing on heart health in women.</p>
+        </div>
+
+        <div class="content-section reveal" data-delay="200">
+          <h3>Education & Training</h3>
+          <div class="list-item">
+            <div class="list-item-year">2010</div>
+            <div>
+              <strong>Fellowship in Interventional Cardiology</strong><br>
+              Johns Hopkins University Hospital
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-item-year">2007</div>
+            <div>
+              <strong>Residency in Internal Medicine</strong><br>
+              Mayo Clinic
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-item-year">2004</div>
+            <div>
+              <strong>Doctor of Medicine (MD)</strong><br>
+              Harvard Medical School
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section reveal" data-delay="300">
+          <h3>Patient Reviews</h3>
+          
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Dr. Jenkins saved my life. She explained my condition in a way I could understand and her surgical team was incredible. I felt completely at ease."</p>
+            <span style="font-size: 0.875rem; color: var(--color-text-secondary);">- Michael T. (Verified Patient)</span>
+          </div>
+          
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Very attentive and professional. She never rushes her appointments and really listens to your concerns. Highly recommend!"</p>
+            <span style="font-size: 0.875rem; color: var(--color-text-secondary);">- Sarah L. (Verified Patient)</span>
+          </div>
+          
+          <div class="text-center" style="margin-top: 1.5rem;">
+            <button class="btn btn-outline">Read All 124 Reviews</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Modern Care Hospital. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

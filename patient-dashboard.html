@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Dashboard | Modern Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    body { background-color: var(--color-bg); }
+    
+    .portal-nav {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .dashboard-layout {
+      display: grid;
+      gap: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+    }
+    
+    @media (min-width: 1024px) {
+      .dashboard-layout { grid-template-columns: 250px 1fr; }
+    }
+    
+    .sidebar-menu {
+      list-style: none;
+      background: var(--color-surface);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      padding: 1rem 0;
+    }
+    
+    .sidebar-menu li a {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1.5rem;
+      color: var(--color-text-secondary);
+      transition: all var(--transition-fast);
+    }
+    
+    .sidebar-menu li a:hover, .sidebar-menu li a.active {
+      background: var(--color-primary-light);
+      color: var(--color-primary-dark);
+      border-left: 4px solid var(--color-primary);
+    }
+    
+    [data-theme="dark"] .sidebar-menu li a:hover, [data-theme="dark"] .sidebar-menu li a.active {
+      background: rgba(63, 216, 184, 0.1);
+      color: var(--color-primary);
+    }
+    
+    .dashboard-panel {
+      background: var(--color-surface);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1rem;
+    }
+    
+    .appt-card {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--color-bg);
+    }
+    
+    .badge-success { background: rgba(46, 158, 91, 0.1); color: var(--color-success); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
+    .badge-warning { background: rgba(224, 161, 0, 0.1); color: var(--color-warning); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+  
+  <nav class="portal-nav">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+        </svg>
+        Patient Portal
+      </a>
+      <div class="nav-actions">
+        <button class="theme-toggle btn-outline btn" style="border:none; padding: 0.5rem">🌓</button>
+        <span class="fw-600" style="margin-right: 1rem;">John Doe</span>
+        <a href="patient-portal-login.html" class="btn btn-outline" style="padding: 0.5rem 1rem;">Log Out</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container dashboard-layout">
+    
+    <aside class="reveal">
+      <ul class="sidebar-menu">
+        <li><a href="#" class="active">📊 Dashboard</a></li>
+        <li><a href="#">📅 Appointments</a></li>
+        <li><a href="#">📋 Test Results</a></li>
+        <li><a href="#">💊 Prescriptions</a></li>
+        <li><a href="#">✉️ Messages <span class="badge-warning" style="margin-left: auto;">1</span></a></li>
+        <li><a href="#">💳 Billing</a></li>
+        <li><a href="#">⚙️ Settings</a></li>
+      </ul>
+    </aside>
+
+    <div class="reveal" data-delay="100">
+      <h2 style="margin-bottom: 2rem;">Welcome back, John!</h2>
+      
+      <div class="grid grid-cols-2" style="margin-bottom: 2rem;">
+        <div class="dashboard-panel" style="margin: 0;">
+          <h3 style="font-size: 1.125rem; margin-bottom: 0.5rem;">Next Appointment</h3>
+          <p class="text-primary fw-600" style="font-size: 1.25rem;">Tomorrow, 10:00 AM</p>
+          <p style="font-size: 0.875rem;">Cardiology Checkup with Dr. Jenkins</p>
+        </div>
+        <div class="dashboard-panel" style="margin: 0;">
+          <h3 style="font-size: 1.125rem; margin-bottom: 0.5rem;">Unread Messages</h3>
+          <p class="text-warning fw-600" style="font-size: 1.25rem; color: var(--color-warning);">1 New Message</p>
+          <p style="font-size: 0.875rem;">From Dr. Smith's Office regarding lab results.</p>
+        </div>
+      </div>
+
+      <div class="dashboard-panel">
+        <div class="dashboard-header">
+          <h3>Upcoming Appointments</h3>
+          <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">+ Book New</button>
+        </div>
+        
+        <div class="appt-card">
+          <div>
+            <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 0.5rem;">
+              <span class="fw-600" style="font-size: 1.125rem;">Aug 15, 2026</span>
+              <span class="badge-success">Confirmed</span>
+            </div>
+            <p style="margin: 0; color: var(--color-text-secondary);">10:00 AM • Dr. Sarah Jenkins (Cardiology)</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Reschedule</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dashboard-panel">
+        <div class="dashboard-header">
+          <h3>Recent Lab Results</h3>
+          <a href="#" class="text-primary fw-600" style="font-size: 0.875rem;">View All Results &rarr;</a>
+        </div>
+        
+        <table style="width: 100%; border-collapse: collapse; text-align: left;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--color-border);">
+              <th style="padding: 1rem 0;">Test Name</th>
+              <th style="padding: 1rem 0;">Date</th>
+              <th style="padding: 1rem 0;">Status</th>
+              <th style="padding: 1rem 0;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--color-border);">
+              <td style="padding: 1rem 0;">Complete Blood Count (CBC)</td>
+              <td style="padding: 1rem 0;">Aug 1, 2026</td>
+              <td style="padding: 1rem 0;"><span class="badge-success">Normal</span></td>
+              <td style="padding: 1rem 0;"><a href="#" class="text-primary fw-600">View Report</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem 0;">Lipid Panel</td>
+              <td style="padding: 1rem 0;">Aug 1, 2026</td>
+              <td style="padding: 1rem 0;"><span class="badge-warning">Review Needed</span></td>
+              <td style="padding: 1rem 0;"><a href="#" class="text-primary fw-600">View Report</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

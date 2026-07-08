@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | Modern Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .page-header {
+      padding-top: 10rem;
+      padding-bottom: 4rem;
+      background: var(--color-primary-light);
+      text-align: center;
+    }
+    
+    [data-theme="dark"] .page-header {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+        </svg>
+        ModernCare
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="departments.html" class="nav-link">Departments</a>
+        <a href="services.html" class="nav-link fw-600 text-primary">Services</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle btn-outline btn" style="border:none; padding: 0.5rem">🌓</button>
+        <a href="appointment.html" class="btn btn-primary d-none d-lg-inline-flex">Book Appointment</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="page-header">
+      <div class="container reveal">
+        <h1>Patient Services & Amenities</h1>
+        <p>Providing exceptional support and advanced treatments for your comfort and recovery.</p>
+      </div>
+    </header>
+
+    <section class="section container">
+      <div class="grid grid-cols-3">
+        <a href="service-detail.html" class="card card-hover reveal" data-delay="100">
+          <h3 style="margin-bottom: 1rem;">24/7 Pharmacy</h3>
+          <p>Fully stocked pharmacy ensuring you get your prescribed medications immediately without leaving the hospital.</p>
+          <span class="text-primary fw-600" style="margin-top: 1rem; display: block;">View details &rarr;</span>
+        </a>
+        <a href="service-detail.html" class="card card-hover reveal" data-delay="200">
+          <h3 style="margin-bottom: 1rem;">Diagnostic Imaging</h3>
+          <p>Advanced MRI, CT scans, X-rays, and Ultrasounds with same-day reporting for rapid diagnosis.</p>
+          <span class="text-primary fw-600" style="margin-top: 1rem; display: block;">View details &rarr;</span>
+        </a>
+        <a href="service-detail.html" class="card card-hover reveal" data-delay="300">
+          <h3 style="margin-bottom: 1rem;">ICU & Critical Care</h3>
+          <p>State-of-the-art intensive care units equipped with life-support systems and 1:1 nurse-patient ratios.</p>
+          <span class="text-primary fw-600" style="margin-top: 1rem; display: block;">View details &rarr;</span>
+        </a>
+        <a href="service-detail.html" class="card card-hover reveal" data-delay="100">
+          <h3 style="margin-bottom: 1rem;">Blood Bank</h3>
+          <p>24/7 certified blood bank ensuring safe blood transfusions for emergencies and surgeries.</p>
+          <span class="text-primary fw-600" style="margin-top: 1rem; display: block;">View details &rarr;</span>
+        </a>
+        <a href="service-detail.html" class="card card-hover reveal" data-delay="200">
+          <h3 style="margin-bottom: 1rem;">Dietary Services</h3>
+          <p>Personalized nutrition plans and high-quality meals curated by clinical dietitians for inpatients.</p>
+          <span class="text-primary fw-600" style="margin-top: 1rem; display: block;">View details &rarr;</span>
+        </a>
+        <a href="service-detail.html" class="card card-hover reveal" data-delay="300">
+          <h3 style="margin-bottom: 1rem;">Ambulance Services</h3>
+          <p>Fleet of Advanced Life Support (ALS) ambulances ready 24/7 for emergency patient transport.</p>
+          <span class="text-primary fw-600" style="margin-top: 1rem; display: block;">View details &rarr;</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Modern Care Hospital. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Checkup Packages | Modern Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .page-header {
+      padding-top: 10rem;
+      padding-bottom: 4rem;
+      background: var(--color-primary-light);
+      text-align: center;
+    }
+    
+    [data-theme="dark"] .page-header {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    .pricing-card {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      background: var(--color-surface);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all var(--transition-normal);
+    }
+    
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-primary);
+    }
+    
+    .pricing-card.popular {
+      border: 2px solid var(--color-primary);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .popular-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--color-primary);
+      color: white;
+      padding: 0.25rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .price {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin: 1rem 0;
+    }
+    
+    .features-list {
+      list-style: none;
+      margin: 2rem 0;
+      flex: 1;
+    }
+    
+    .features-list li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .features-list li::before {
+      content: '✓';
+      color: var(--color-primary);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+        </svg>
+        ModernCare
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="departments.html" class="nav-link">Departments</a>
+        <a href="health-packages.html" class="nav-link fw-600 text-primary">Health Packages</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle btn-outline btn" style="border:none; padding: 0.5rem">🌓</button>
+        <a href="appointment.html" class="btn btn-primary d-none d-lg-inline-flex">Book Appointment</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="page-header">
+      <div class="container reveal">
+        <h1>Preventive Health Packages</h1>
+        <p>Invest in your health today. Comprehensive screening packages designed for every stage of life.</p>
+      </div>
+    </header>
+
+    <section class="section container">
+      <div class="grid grid-cols-3" style="align-items: center;">
+        
+        <!-- Basic -->
+        <div class="pricing-card reveal" data-delay="100">
+          <h3>Basic Wellness</h3>
+          <p>Essential screenings for healthy individuals under 30.</p>
+          <div class="price">$149</div>
+          <ul class="features-list">
+            <li>Complete Blood Count (CBC)</li>
+            <li>Lipid Profile (Cholesterol)</li>
+            <li>Fasting Blood Sugar</li>
+            <li>Urine Analysis</li>
+            <li>Physician Consultation</li>
+          </ul>
+          <a href="appointment.html" class="btn btn-outline" style="width: 100%; justify-content: center;">Select Package</a>
+        </div>
+        
+        <!-- Comprehensive -->
+        <div class="pricing-card popular reveal" data-delay="200">
+          <div class="popular-badge">Most Popular</div>
+          <h3>Comprehensive</h3>
+          <p>Detailed analysis for adults over 30 for early detection.</p>
+          <div class="price">$299</div>
+          <ul class="features-list">
+            <li>Everything in Basic Wellness</li>
+            <li>Liver & Kidney Function Tests</li>
+            <li>Thyroid Profile (TSH)</li>
+            <li>ECG (Resting)</li>
+            <li>Chest X-Ray</li>
+            <li>Dietary Consultation</li>
+          </ul>
+          <a href="appointment.html" class="btn btn-primary" style="width: 100%; justify-content: center;">Select Package</a>
+        </div>
+
+        <!-- Executive -->
+        <div class="pricing-card reveal" data-delay="300">
+          <h3>Executive Heart</h3>
+          <p>Advanced cardiovascular screening and stress tests.</p>
+          <div class="price">$499</div>
+          <ul class="features-list">
+            <li>Everything in Comprehensive</li>
+            <li>TMT (Treadmill Test)</li>
+            <li>Echocardiogram</li>
+            <li>HbA1c (Diabetes Screen)</li>
+            <li>Cardiologist Consultation</li>
+          </ul>
+          <a href="appointment.html" class="btn btn-outline" style="width: 100%; justify-content: center;">Select Package</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Modern Care Hospital. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

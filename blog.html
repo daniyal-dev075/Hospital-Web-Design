@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Blog | Modern Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .page-header {
+      padding-top: 10rem;
+      padding-bottom: 4rem;
+      background: var(--color-primary-light);
+      text-align: center;
+    }
+    
+    [data-theme="dark"] .page-header {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    .category-chips {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    
+    .chip {
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-full);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-secondary);
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    
+    .chip:hover, .chip.active {
+      background: var(--color-primary);
+      color: white;
+      border-color: var(--color-primary);
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">ModernCare</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="blog.html" class="nav-link fw-600 text-primary">Blog</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle btn-outline btn" style="border:none; padding: 0.5rem">🌓</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="page-header">
+      <div class="container reveal">
+        <h1>Health Insights</h1>
+        <p>Medical news, wellness tips, and stories from our experts.</p>
+        
+        <div class="category-chips">
+          <div class="chip active">All Articles</div>
+          <div class="chip">Heart Health</div>
+          <div class="chip">Nutrition</div>
+          <div class="chip">Mental Wellness</div>
+          <div class="chip">Pediatrics</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section container">
+      <div class="grid grid-cols-3">
+        <!-- Blog Card 1 -->
+        <a href="blog-post.html" class="card card-hover reveal" data-delay="100">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=600" alt="Healthy food" style="height: 200px;">
+          </div>
+          <span class="eyebrow">Nutrition</span>
+          <h3 style="margin-bottom: 1rem;">10 Superfoods for a Healthy Heart</h3>
+          <p>Discover the best foods to incorporate into your daily diet to improve cardiovascular health and prevent disease.</p>
+          <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--color-border); font-size: 0.875rem; color: var(--color-text-secondary);">
+            Aug 12, 2026 • 5 min read
+          </div>
+        </a>
+        
+        <!-- Blog Card 2 -->
+        <a href="blog-post.html" class="card card-hover reveal" data-delay="200">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600" alt="Yoga" style="height: 200px;">
+          </div>
+          <span class="eyebrow">Mental Wellness</span>
+          <h3 style="margin-bottom: 1rem;">Managing Stress in a Fast-Paced World</h3>
+          <p>Practical mindfulness techniques and lifestyle changes recommended by our behavioral health specialists.</p>
+          <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--color-border); font-size: 0.875rem; color: var(--color-text-secondary);">
+            Aug 05, 2026 • 4 min read
+          </div>
+        </a>
+
+        <!-- Blog Card 3 -->
+        <a href="blog-post.html" class="card card-hover reveal" data-delay="300">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=600" alt="Doctor" style="height: 200px;">
+          </div>
+          <span class="eyebrow">Medical News</span>
+          <h3 style="margin-bottom: 1rem;">Breakthroughs in Robotic Surgery</h3>
+          <p>How the new Da Vinci Xi system is revolutionizing minimally invasive procedures at Modern Care.</p>
+          <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--color-border); font-size: 0.875rem; color: var(--color-text-secondary);">
+            Jul 28, 2026 • 7 min read
+          </div>
+        </a>
+      </div>
+      
+      <div class="text-center" style="margin-top: 3rem;">
+        <button class="btn btn-outline">Load More Articles</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Modern Care Hospital.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

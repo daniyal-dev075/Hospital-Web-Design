@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Modern Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    
+    .gallery-item {
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      aspect-ratio: 4/3;
+      cursor: pointer;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar scrolled">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">ModernCare</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle btn-outline btn" style="border:none; padding: 0.5rem">🌓</button>
+      </div>
+    </div>
+  </nav>
+
+  <main style="padding-top: 8rem; padding-bottom: 4rem;">
+    <div class="container reveal">
+      <h1 style="text-align: center; margin-bottom: 3rem;">Facility Gallery</h1>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=600" alt="Hospital Exterior"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=600" alt="MRI Room"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=600" alt="Operating Theater"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&q=80&w=600" alt="Patient Room"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=600" alt="Lobby"></div>
+      </div>
+    </div>
+  </main>
+  
+  <script src="js/script.js"></script>
+</body>
+</html>
